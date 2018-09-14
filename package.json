@@ -1,0 +1,15 @@
+{
+  "name": "commenting",
+  "version": "1.0.0",
+  "description": "Simple Commenting Widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -o"
+  },
+  "author": "Shirshendu Bhowmick",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
