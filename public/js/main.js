@@ -76,7 +76,7 @@ var IndividualCommentWidget = function(commentsArray, rootParentObj) {
 
     var upVoteButtonClickHandler = function() {
         if(!commentsArray.voterList.includes(sessionStorage.getItem("currentUser"))) {
-            this.noOfVotesSpan.innerText = parseInt(this.noOfVotesSpan.innerText) + 1;
+            noOfVotesSpan.innerText = parseInt(noOfVotesSpan.innerText) + 1;
             commentsArray.noOfVotes += 1;
             commentsArray.voterList.push(sessionStorage.getItem("currentUser"));
             localStorageCommentsUpdate(commentsArray.username, commentsArray.timeStamp, commentsArray);
@@ -85,7 +85,7 @@ var IndividualCommentWidget = function(commentsArray, rootParentObj) {
 
     var downVoteButtonClickHandler = function() {
         if(!commentsArray.voterList.includes(sessionStorage.getItem("currentUser"))) {
-            this.noOfVotesSpan.innerText = parseInt(this.noOfVotesSpan.innerText) - 1;
+            noOfVotesSpan.innerText = parseInt(noOfVotesSpan.innerText) - 1;
             commentsArray.noOfVotes -= 1;
             commentsArray.voterList.push(sessionStorage.getItem("currentUser"));
             localStorageCommentsUpdate(commentsArray.username, commentsArray.timeStamp, commentsArray);
