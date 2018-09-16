@@ -23,7 +23,7 @@ var timeFromNow = function(timeStamp) {
         returnText = dayCount > 1 ? dayCount + " days ago" : dayCount + " day ago";
     }
     return returnText;
-}
+};
 
 
 var ReplyWidget = function(commentsArray, rootParentObj) {
@@ -81,7 +81,7 @@ var IndividualCommentWidget = function(commentsArray, rootParentObj) {
             commentsArray.voterList.push(sessionStorage.getItem("currentUser"));
             localStorageCommentsUpdate(commentsArray.username, commentsArray.timeStamp, commentsArray);
         }
-    }.bind(this);
+    };
 
     var downVoteButtonClickHandler = function() {
         if(!commentsArray.voterList.includes(sessionStorage.getItem("currentUser"))) {
@@ -90,7 +90,7 @@ var IndividualCommentWidget = function(commentsArray, rootParentObj) {
             commentsArray.voterList.push(sessionStorage.getItem("currentUser"));
             localStorageCommentsUpdate(commentsArray.username, commentsArray.timeStamp, commentsArray);
         }
-    }.bind(this);
+    };
 
     var replyButtonClickHandler = function() {
         var replyWidget = new ReplyWidget(commentsArray, rootParentObj);
@@ -129,7 +129,7 @@ var IndividualCommentWidget = function(commentsArray, rootParentObj) {
     if(commentsArray.commentLevel <= 2) {
         this.containerSpan.appendChild(replyButton);
     }
-}
+};
 
 var Comment = function(commentsArray) {
 
@@ -180,13 +180,13 @@ var Comment = function(commentsArray) {
             replyComments = undefined;
         }
     }
-}
+};
 
 Comment.prototype.addToUI = function(rootID) {
     for(var i = 0; i < this.commentsDivArray.length; i++) {
         document.getElementById(rootID).appendChild(this.commentsDivArray[i]);
     }
-}
+};
 
 
 var CommentWidget = function(rootID) { //pass ID of the div where comment widget needs to be rendered
@@ -253,12 +253,12 @@ var loginHandler = function(e) {
     rootDiv.id = "root";
     body.insertBefore(rootDiv, body.firstElementChild);
     new CommentWidget("root");
-}
+};
 
 
 
 //setting up avatar for 3 users
-localStorage.setItem("ShirshenduAvatar", "avatar1.png");
+localStorage.setItem("mikeAvatar", "avatar1.png");
 localStorage.setItem("jamesAvatar", "avatar2.png");
 localStorage.setItem("maxAvatar", "avatar3.png");
 
@@ -289,4 +289,4 @@ var localStorageCommentsUpdate = function(username, timeStamp, newValue) {
         }
         localStorage.setItem("commentsData", JSON.stringify(commentsObj));
     }
-}
+};
